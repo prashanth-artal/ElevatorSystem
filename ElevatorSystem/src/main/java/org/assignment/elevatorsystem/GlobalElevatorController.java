@@ -21,6 +21,7 @@ public class GlobalElevatorController implements ElevatorController{
 	public void addPickup(String up,int floor) {
 
 		boolean chkElevatorAssigned = false;
+		
 		for (Elevator elevator : elevators) {
 
 			System.out.println(elevator.getDestinationQueue());

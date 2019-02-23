@@ -1,0 +1,24 @@
+
+Sat Feb 23 13:29:57 EST 2019Elevator No: 1  Entering 6
+Sat Feb 23 13:30:00 EST 2019Elevator No: 1  Entering 5
+Sat Feb 23 13:30:03 EST 2019Elevator No: 1  Entering 4
+Sat Feb 23 13:30:06 EST 2019Elevator No: 1  Entering 3
+reached:2
+Sat Feb 23 13:30:09 EST 2019Elevator No: 1  Entering 2
+Sat Feb 23 13:30:11 EST 2019Elevator No: 1  Entering 3
+Sat Feb 23 13:30:12 EST 2019Elevator No: 1  Entering 4
+Sat Feb 23 13:30:14 EST 2019Elevator No: 1  Entering 5
+Sat Feb 23 13:30:15 EST 2019Elevator No: 1  Entering 6
+reached:7
+Sat Feb 23 13:30:18 EST 2019Elevator No: 1  Entering 7
+Sat Feb 23 13:30:20 EST 2019Elevator No: 1  Entering 8
+Sat Feb 23 13:30:21 EST 2019Elevator No: 1  Entering 9
+Sat Feb 23 13:30:23 EST 2019Elevator No: 1  Entering 10
+Sat Feb 23 13:30:24 EST 2019Elevator No: 1  Entering 11
+Sat Feb 23 13:30:26 EST 2019Elevator No: 1  Entering 12
+Sat Feb 23 13:30:27 EST 2019Elevator No: 1  Entering 13
+Sat Feb 23 13:30:29 EST 2019Elevator No: 1  Entering 14
+Sat Feb 23 13:30:30 EST 2019Elevator No: 1  Entering 15
+reached:16
+Sat Feb 23 13:30:33 EST 2019Elevator No: 1  Entering 16
+reached:17

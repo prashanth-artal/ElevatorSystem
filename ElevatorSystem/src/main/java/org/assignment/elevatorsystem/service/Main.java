@@ -3,27 +3,33 @@ package org.assignment.elevatorsystem.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import org.assignment.elevatorsystem.Elevator;
 import org.assignment.elevatorsystem.ElevatorController;
 import org.assignment.elevatorsystem.ElevatorImplementation;
 import org.assignment.elevatorsystem.GlobalElevatorController;
+import org.assignment.elevatorsystem.util.StaticValues;
 
 
 /*
     2     10
        6       13
        
-    2               17s
+    2               17
           6    15     
  */
 
 
 public class Main {
 
+	
 	public static void main(String[] args) {
-
-		ElevatorImplementation elevator_1 =  new ElevatorImplementation(1,0, 20, 3);
+		
+        int maxEndFloor = StaticValues.ELEVATOR_END_FLOOR;
+        int startFloor = StaticValues.ELEVATOR_START_FLOOR;
+        
+		ElevatorImplementation elevator_1 =  new ElevatorImplementation(1,startFloor, maxEndFloor, 3);
 
 		List<Elevator> elevatorList = new ArrayList<Elevator>();
 		elevatorList.add(elevator_1);
@@ -50,8 +56,10 @@ public class Main {
 				System.out.println("Enter your interest floor :");
 				int interestFloor = sc.nextInt();
 				controller_1.addPickup("moveUp", interestFloor);
+				
 			}
 			else if(val == 2) {
+				
 				System.out.println("Enter your current floor :");
 				int currentFloor = sc.nextInt();
 				controller_1.addPickup("moveDown", currentFloor);

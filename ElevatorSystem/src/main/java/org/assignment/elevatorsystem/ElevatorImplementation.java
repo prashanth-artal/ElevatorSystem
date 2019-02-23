@@ -1,5 +1,13 @@
 package org.assignment.elevatorsystem;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.Date;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.concurrent.BlockingDeque;
@@ -8,6 +16,9 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Logger;
+
+import org.assignment.elevatorsystem.service.Main;
 
 public class ElevatorImplementation implements Elevator,Runnable{
 
@@ -17,6 +28,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 	private final int maxCapacity;
 	private int currentFloor;
 	BlockingDeque<Integer> destinationQueue;
+	Writer output;
 
 
 	State state;
@@ -28,6 +40,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		this.maxCapacity = maxCapacity;
 		currentFloor = 0;
 		destinationQueue	= new LinkedBlockingDeque<>(20);
+
 	}
 
 
@@ -93,7 +106,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 
 		state = State.UP;
 		while(currentFloor<destination) {
-			System.out.println("Elevator No: "+elevatorId+"  Entering "+currentFloor);
+			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Entering "+currentFloor);
 			currentFloor++;
 			try {
 				Thread.sleep(3000);
@@ -101,11 +114,28 @@ public class ElevatorImplementation implements Elevator,Runnable{
 				e.printStackTrace();
 			}
 		}
-		System.out.println(" reached : "+currentFloor);
-		//		state = State.IDLE;
+		//		System.out.println(" reached : "+currentFloor);
+		writeToFile("reached:"+currentFloor);
 
 	}
 
+	public synchronized void writeToFile(String msg)  {
+		String fileName = "C:\\Users\\ARTAL\\eclipse-workspace\\ElevatorSystem\\ElevatorSystem\\Output\\"+elevatorId+".txt";
+		PrintWriter printWriter = null;
+		File file = new File(fileName);
+		try {
+			if (!file.exists()) file.createNewFile();
+			printWriter = new PrintWriter(new FileOutputStream(fileName, true));
+			printWriter.write("\n"+msg);
+		} catch (IOException ioex) {
+			ioex.printStackTrace();
+		} finally {
+			if (printWriter != null) {
+				printWriter.flush();
+				printWriter.close();
+			}
+		}
+	}
 
 	public State getState() {
 		return state;
@@ -123,7 +153,9 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		System.out.println(state);
 
 		while(currentFloor>destination) {
-			System.out.println("Elevator No: "+elevatorId+"  Entering "+currentFloor);
+			//			System.out.println("Elevator No: "+elevatorId+"  Entering "+currentFloor);
+			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Entering "+currentFloor);
+
 			currentFloor--;
 			try {
 				Thread.sleep(3000);
@@ -133,8 +165,10 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			}
 		}
 
-		System.out.println(" reached : "+currentFloor);
+//		System.out.println(" reached : "+currentFloor);
 		//		state = State.IDLE;
+		writeToFile("reached:"+currentFloor);
+
 
 
 	}
