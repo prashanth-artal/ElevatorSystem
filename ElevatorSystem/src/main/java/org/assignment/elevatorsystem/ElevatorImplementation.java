@@ -79,9 +79,9 @@ public class ElevatorImplementation implements Elevator,Runnable{
 
 	public void prependDestination(int floor) {
 		destinationQueue.addFirst(floor);
+		moveNext();
 	}
 
-	//	private final Lock queueLock = new ReentrantLock();
 	public void moveNext() {
 		if (destinationQueue.isEmpty()) {
 			return;
@@ -97,30 +97,43 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			destinationQueue.poll();
 		}
 
-
-		//		queueLock.unlock();
 	}
 
+
+	public void wait3seconds() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void wait2seconds() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
 
 	public void moveUp(int destination) {
 
 		state = State.UP;
 		while(currentFloor<destination) {
-			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Entering "+currentFloor);
+			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Crossing "+currentFloor);
 			currentFloor++;
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			wait3seconds();
 		}
-		//		System.out.println(" reached : "+currentFloor);
-		writeToFile("reached:"+currentFloor);
+		writeToFile("\n\nReached Floor:"+destination);
+		writeToFile("\n\t\t\tOPENING DOOR!!!!");
+		wait2seconds();
+		writeToFile("\n\t\t\tCLOSING DOOR!!!!");
 
 	}
 
 	public synchronized void writeToFile(String msg)  {
-		String fileName = "C:\\Users\\ARTAL\\eclipse-workspace\\ElevatorSystem\\ElevatorSystem\\Output\\"+elevatorId+".txt";
+		String fileName = "..\\ElevatorSystem\\Output\\"+elevatorId+".txt";
 		PrintWriter printWriter = null;
 		File file = new File(fileName);
 		try {
@@ -153,22 +166,16 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		System.out.println(state);
 
 		while(currentFloor>destination) {
-			//			System.out.println("Elevator No: "+elevatorId+"  Entering "+currentFloor);
-			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Entering "+currentFloor);
+			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Crossing "+currentFloor);
 
 			currentFloor--;
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			wait3seconds();
 		}
 
-//		System.out.println(" reached : "+currentFloor);
-		//		state = State.IDLE;
-		writeToFile("reached:"+currentFloor);
-
+		writeToFile("\n\nReached floor:"+destination);
+		writeToFile("\n\t\t\tOPENING DOOR!!!!");
+		wait2seconds();	
+		writeToFile("\n\t\t\tCLOSING DOOR!!!!");
 
 
 	}
@@ -178,6 +185,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		if (destinationQueue.isEmpty()) {
 			return false;
 		}
+		
 		int destination = destinationQueue.peek();
 		return (floor >= currentFloor && floor <= destination) || (floor <= currentFloor && floor >= destination);
 	}
