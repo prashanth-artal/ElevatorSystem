@@ -22,37 +22,39 @@ public class GlobalElevatorController implements ElevatorController{
 
 	public void addPickup(String up,int floor) {
 
+		//		floor = verifyFloor(floor);   
 		boolean chkElevatorAssigned = false;
 
 		for (Elevator elevator : elevators) {
 
 			System.out.println(elevator.getDestinationQueue());
 			if(elevator.getState() == State.UP && up.equals("moveUp") ) {
-				if(!elevator.isIdle() && elevator.getDestinationQueue().peek() > floor) {
-
-//					elevator.moveUp(floor);
-					elevator.prependDestination(floor);
+				if(!elevator.isIdle() && elevator.isInPath(floor)) {
+					elevator.moveUp(floor);
 					chkElevatorAssigned = true;
+
 				}
-				if(!elevator.isIdle() && elevator.getDestinationQueue().peek() < floor) {
+				else {
 					elevator.queueDestination(floor);
 					chkElevatorAssigned = true;
 				}
-			
+
 
 			}
 
 			if(elevator.getState() == State.DOWN &&  up.equals("moveDown")  ) {
-				
-				if(!elevator.isIdle() && elevator.getDestinationQueue().peek() < floor) {
-//					elevator.moveDown(floor);
-					elevator.prependDestination(floor);
+
+				if(!elevator.isIdle() && elevator.isInPath(floor)) {
+					elevator.moveDown(floor);
 					chkElevatorAssigned = true;
+
 				}
-				if(!elevator.isIdle() && elevator.getDestinationQueue().peek() > floor) {
+				else {
 					elevator.queueDestination(floor);
 					chkElevatorAssigned = true;
 				}
+
+
 			}
 		}
 
@@ -68,16 +70,18 @@ public class GlobalElevatorController implements ElevatorController{
 
 	}
 
-	
+
 	public int verifyFloor(int floor) {
-		
-		Scanner sc = new Scanner(System.in);
+
+
 		if(floor>StaticValues.ELEVATOR_END_FLOOR  || floor < StaticValues.ELEVATOR_START_FLOOR) {
 			System.out.println(" ENTER VALID FLOOR NUMBER BTWN "+ StaticValues.ELEVATOR_START_FLOOR+"  -  "+StaticValues.ELEVATOR_END_FLOOR);
-             int value = sc.nextInt();
-             return verifyFloor(value);
+			Scanner sc = new Scanner(System.in);
+			int value = sc.nextInt();
+			return verifyFloor(value);
 		}
-		
+
+
 		return floor;
 	}
 
