@@ -30,7 +30,7 @@ public class GlobalElevatorController implements ElevatorController{
 			System.out.println(elevator.getDestinationQueue());
 			if(elevator.getState() == State.UP && up.equals("moveUp") ) {
 				if(!elevator.isIdle() && elevator.isInPath(floor)) {
-					elevator.moveUp(floor);
+					elevator.prependDestination(floor);
 					chkElevatorAssigned = true;
 
 				}
@@ -45,7 +45,7 @@ public class GlobalElevatorController implements ElevatorController{
 			if(elevator.getState() == State.DOWN &&  up.equals("moveDown")  ) {
 
 				if(!elevator.isIdle() && elevator.isInPath(floor)) {
-					elevator.moveDown(floor);
+					elevator.prependDestination(floor);
 					chkElevatorAssigned = true;
 
 				}
