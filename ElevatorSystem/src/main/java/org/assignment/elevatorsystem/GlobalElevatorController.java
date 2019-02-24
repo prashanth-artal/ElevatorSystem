@@ -10,13 +10,12 @@ public class GlobalElevatorController implements ElevatorController{
 	private List<Elevator> elevators;
 
 	public GlobalElevatorController(List<Elevator> elevators) {
-		this.elevators = elevators;
+		this.elevators   =   elevators;
 	}
 
 	/**
-	 * Represents pick up (origin floor).  Attempt to delegate request immediately, but if no elevators presently
-	 * available, then add to controller's queue, and attempt again during step().
-	 *
+	 * Represents pick up (floor) : Signal to move to the particular floor
+	 * 
 	 * @param floor assumption: the same pickup floor will not be requested while it's being processed.  Logic should
 	 *             be handled by hypothetical button class.
 	 */
@@ -71,6 +70,7 @@ public class GlobalElevatorController implements ElevatorController{
 
 	
 	public int verifyFloor(int floor) {
+		
 		Scanner sc = new Scanner(System.in);
 		if(floor>StaticValues.ELEVATOR_END_FLOOR  || floor < StaticValues.ELEVATOR_START_FLOOR) {
 			System.out.println(" ENTER VALID FLOOR NUMBER BTWN "+ StaticValues.ELEVATOR_START_FLOOR+"  -  "+StaticValues.ELEVATOR_END_FLOOR);
