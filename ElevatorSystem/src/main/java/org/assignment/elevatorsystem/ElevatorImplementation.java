@@ -27,6 +27,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 	private final int maxFloor;
 	private final int maxCapacity;
 	private int currentFloor;
+	
 	BlockingDeque<Integer> destinationQueue;
 	Writer output;
 
@@ -93,9 +94,9 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			moveDown(destination);
 		}
 
-		if (currentFloor == destination) {
+//		if (currentFloor == destination) {
 			destinationQueue.poll();
-		}
+//		}
 
 	}
 
@@ -127,7 +128,6 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		}
 		writeToFile("\n\nReached Floor:"+destination);
 		writeToFile("\n\t\t\tOPENING DOOR!!!!");
-		wait2seconds();
 		writeToFile("\n\t\t\tCLOSING DOOR!!!!");
 
 	}
@@ -174,7 +174,6 @@ public class ElevatorImplementation implements Elevator,Runnable{
 
 		writeToFile("\n\nReached floor:"+destination);
 		writeToFile("\n\t\t\tOPENING DOOR!!!!");
-		wait2seconds();	
 		writeToFile("\n\t\t\tCLOSING DOOR!!!!");
 
 
@@ -187,6 +186,9 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		}
 		
 		int destination = destinationQueue.peek();
+		boolean downTest = (floor <= currentFloor && floor >= destination);
+		boolean upTest = (floor >= currentFloor && floor <= destination);
+		System.out.println(currentFloor+" "+floor+" "+destination+" "+downTest+" "+upTest);
 		return (floor >= currentFloor && floor <= destination) || (floor <= currentFloor && floor >= destination);
 	}
 
