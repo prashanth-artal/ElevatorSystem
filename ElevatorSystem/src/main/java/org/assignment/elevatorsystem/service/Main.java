@@ -78,7 +78,7 @@ public class Main {
 
 				int currentFloor = sc.nextInt();
 				currentFloor     = controller_1.verifyFloor(currentFloor);
-			    controller_1.addPickup("moveUp", currentFloor);
+				controller_1.addPickup("moveUp", currentFloor);
 
 
 				System.out.println("Enter your interest floor :");
@@ -123,7 +123,7 @@ public class Main {
 			}
 
 		}
-		
+
 
 		try {
 			th1.join();

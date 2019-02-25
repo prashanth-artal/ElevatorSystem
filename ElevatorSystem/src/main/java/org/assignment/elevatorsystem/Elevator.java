@@ -6,6 +6,7 @@ import java.util.concurrent.BlockingDeque;
 
 
 public interface Elevator {
+	
 	int getMinFloor();
 	int getMaxFloor();
 	int getCurrentFloor();

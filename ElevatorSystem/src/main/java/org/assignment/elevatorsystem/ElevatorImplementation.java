@@ -80,7 +80,6 @@ public class ElevatorImplementation implements Elevator,Runnable{
 
 	public void prependDestination(int floor) {
 		destinationQueue.addFirst(floor);
-		//moveNext();
 	}
 
 	public void moveNext() {
@@ -95,9 +94,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			moveDown(destination);
 		}
 
-//		if (currentFloor == destination) {
 			destinationQueue.poll();
-//		}
 
 	}
 
