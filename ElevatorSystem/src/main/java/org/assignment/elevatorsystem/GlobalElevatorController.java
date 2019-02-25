@@ -20,44 +20,47 @@ public class GlobalElevatorController implements ElevatorController{
 	 *             be handled by hypothetical button class.
 	 */
 
-	public void addPickup(String up,int floor) {
-
-		//		floor = verifyFloor(floor);   
+	public void addPickup(String direction,int floor) {
+/*
+  7 9 0
+ */
+	
 		boolean chkElevatorAssigned = false;
 
 		for (Elevator elevator : elevators) {
 
+			
+			if(elevator.getState() == State.UP && direction.equals("moveUp") ) {
+				if(!elevator.isIdle() && elevator.isInPath(floor)) {
+					elevator.prependDestination(floor);
+					chkElevatorAssigned = true;
+
+				}
+				else {
+					elevator.queueDestination(floor);
+					chkElevatorAssigned = true;
+				}
+
+
+			}
+
+			if(elevator.getState() == State.DOWN &&  direction.equals("moveDown")  ) {
+
+				if(!elevator.isIdle() && elevator.isInPath(floor)) {
+					//					elevator.moveDown(floor);
+					elevator.prependDestination(floor);
+					chkElevatorAssigned = true;
+
+				}
+				else {
+					elevator.queueDestination(floor);
+					chkElevatorAssigned = true;
+				}
+
+
+			}
 			System.out.println(elevator.getDestinationQueue());
-			if(elevator.getState() == State.UP && up.equals("moveUp") ) {
-				if(!elevator.isIdle() && elevator.isInPath(floor)) {
-					elevator.prependDestination(floor);
-//					elevator.moveUp(floor);
-					chkElevatorAssigned = true;
 
-				}
-				else {
-					elevator.queueDestination(floor);
-					chkElevatorAssigned = true;
-				}
-
-
-			}
-
-			if(elevator.getState() == State.DOWN &&  up.equals("moveDown")  ) {
-
-				if(!elevator.isIdle() && elevator.isInPath(floor)) {
-//					elevator.moveDown(floor);
-					elevator.prependDestination(floor);
-					chkElevatorAssigned = true;
-
-				}
-				else {
-					elevator.queueDestination(floor);
-					chkElevatorAssigned = true;
-				}
-
-
-			}
 		}
 
 
@@ -65,8 +68,11 @@ public class GlobalElevatorController implements ElevatorController{
 
 			if(!chkElevatorAssigned) {
 				elevator.queueDestination(floor);
+				System.out.println(elevator.getDestinationQueue());
+
 				break;
 			}
+
 		}
 
 
@@ -77,9 +83,10 @@ public class GlobalElevatorController implements ElevatorController{
 
 
 		if(floor>StaticValues.ELEVATOR_END_FLOOR  || floor < StaticValues.ELEVATOR_START_FLOOR) {
-			System.out.println(" ENTER VALID FLOOR NUMBER BTWN "+ StaticValues.ELEVATOR_START_FLOOR+"  -  "+StaticValues.ELEVATOR_END_FLOOR);
+			System.out.println(" ENTER VALID FLOOR NUMBER BETWN "+ StaticValues.ELEVATOR_START_FLOOR+"  -  "+StaticValues.ELEVATOR_END_FLOOR);
 			Scanner sc = new Scanner(System.in);
 			int value = sc.nextInt();
+//			sc.close();
 			return verifyFloor(value);
 		}
 

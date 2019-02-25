@@ -80,13 +80,14 @@ public class ElevatorImplementation implements Elevator,Runnable{
 
 	public void prependDestination(int floor) {
 		destinationQueue.addFirst(floor);
-		moveNext();
+		//moveNext();
 	}
 
 	public void moveNext() {
 		if (destinationQueue.isEmpty()) {
 			return;
 		}
+		
 		int destination = destinationQueue.peek();
 		if (currentFloor < destination) {
 			moveUp(destination);
@@ -118,10 +119,28 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		}		
 	}
 
+	public boolean QContains(int current) {
+		if(destinationQueue.contains(current)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public void stop() {
+		
+	}
 	public void moveUp(int destination) {
 
 		state = State.UP;
 		while(currentFloor<destination) {
+			if(QContains(currentFloor)) {
+				writeToFile("\n\nReached Floor:"+currentFloor);
+				writeToFile("\n\t\t\tOPENING DOOR!!!!");
+				writeToFile("\n\t\t\tCLOSING DOOR!!!!");
+				destinationQueue.remove(currentFloor);
+			}
 			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Crossing "+currentFloor);
 			currentFloor++;
 			wait3seconds();
@@ -166,8 +185,13 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		System.out.println(state);
 
 		while(currentFloor>destination) {
+			if(QContains(currentFloor)) {
+				writeToFile("\n\nReached Floor:"+currentFloor);
+				writeToFile("\n\t\t\tOPENING DOOR!!!!");
+				writeToFile("\n\t\t\tCLOSING DOOR!!!!");
+				destinationQueue.remove(currentFloor);
+			}
 			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Crossing "+currentFloor);
-
 			currentFloor--;
 			wait3seconds();
 		}
@@ -181,6 +205,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 
 
 	public boolean isInPath(int floor) {
+		
 		if (destinationQueue.isEmpty()) {
 			return false;
 		}

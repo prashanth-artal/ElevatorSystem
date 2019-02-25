@@ -13,7 +13,7 @@ import org.assignment.elevatorsystem.util.StaticValues;
 
 
 /*
- 
+
    ELEVATOR ALGORITHM : The elevator algorithm, a simple algorithm by which a single elevator can decide where to stop, is summarized as follows:
 
     1.Continue traveling in the same direction while there are remaining
@@ -24,25 +24,25 @@ import org.assignment.elevatorsystem.util.StaticValues;
 
 
    TEST CASES:
-    
+
    TESTCASE 1.    
                MoveUp  i)  2 ---------5
                MoveUp  ii)              6---------15
-                 
-                 
+
+
    TESTCASE 2.  
                 MoveUp  i) 2 ------------------13
                 MoveUp  ii)                7---------16
-                  
+
    TESTCASE 3.   
                 MoveUp  i)      2 ---------------------------------- 25
                 MoveUp  ii)                 9-------------------20
-                  
+
    TESTCASE 4.  
                  MoveUp i) 2 --------------------------------------20
                  MoveUp ii)                7---------16     
                  MoveDown iii)          4<------ 10
-    
+
  */
 
 
@@ -52,19 +52,18 @@ public class Main {
 	public static void main(String[] args) {
 
 
-		int maxEndFloor    = StaticValues.ELEVATOR_END_FLOOR;
-		int startFloor     = StaticValues.ELEVATOR_START_FLOOR;
+		int maxEndFloor = StaticValues.ELEVATOR_END_FLOOR;
+		int startFloor  = StaticValues.ELEVATOR_START_FLOOR;
 
-		ElevatorImplementation elevator_1 =  new ElevatorImplementation(1,startFloor, maxEndFloor, 3);
+		ElevatorImplementation elevator_1 = new ElevatorImplementation(1,startFloor, maxEndFloor, 3);
 
-		List<Elevator> elevatorList       = new ArrayList<Elevator>();
-		elevatorList         .add(elevator_1);
+		List<Elevator> elevatorList = new ArrayList<Elevator>();
+		elevatorList.add(elevator_1);
 
-		ElevatorController controller_1   = new GlobalElevatorController(elevatorList);
+		ElevatorController controller_1= new GlobalElevatorController(elevatorList);
 
-		Thread th1                        = new Thread(elevator_1);
-		th1                        .start();
-
+		Thread th1 = new Thread(elevator_1);
+		th1.start();
 
 
 		while(true) {
@@ -77,53 +76,60 @@ public class Main {
 
 				System.out.println("Enter your current floor :");
 
-				int currentFloor = sc          .nextInt();
+				int currentFloor = sc.nextInt();
 				currentFloor     = controller_1.verifyFloor(currentFloor);
-				controller_1                   .addPickup("moveUp", currentFloor);
+			    controller_1.addPickup("moveUp", currentFloor);
 
 
 				System.out.println("Enter your interest floor :");
-				int interestFloor = sc          .nextInt();
-				interestFloor     = controller_1.verifyFloor(interestFloor);
+				int interestFloor = sc.nextInt();
 
 				while(interestFloor   <  currentFloor) {
 
 					System.out.println("You chose to move up:\n");
 					System.out.println("Re-enter your interest floor :");
-					interestFloor = sc          .nextInt();
+					interestFloor = sc.nextInt();
 					interestFloor = controller_1.verifyFloor(interestFloor);
 
-				}
+				} 
 
-				controller_1                    .addPickup("moveUp", interestFloor);
-  
+				controller_1.addPickup("moveUp", interestFloor);
+
 			}
 			else if(val == 2) {
 
 				System.out.println("Enter your current floor :");
-				int currentFloor = sc           .nextInt();
+				int currentFloor = sc.nextInt();
 				currentFloor     = controller_1 .verifyFloor(currentFloor);
-				controller_1                    .addPickup("moveDown", currentFloor);
+				controller_1.addPickup("moveDown", currentFloor);
 
 				System.out.println("Enter your interest floor :");
-				int interestFloor = sc          .nextInt();
+				int interestFloor = sc.nextInt();
 				interestFloor     = controller_1.verifyFloor(interestFloor);
 
 				while(interestFloor   >  currentFloor) {
 
-					     System.out.println("You chose to move up:\n");
-				         System.out.println("Re-enter your interest floor :");
-				                	interestFloor = sc          .nextInt();
-					                interestFloor = controller_1.verifyFloor(interestFloor);
+					System.out.println("You chose to move up:\n");
+					System.out.println("Re-enter your interest floor :");
+					interestFloor = sc.nextInt();
+					interestFloor = controller_1.verifyFloor(interestFloor);
 
 				}
-				controller_1                    .addPickup("moveDown", interestFloor);
+				controller_1.addPickup("moveDown", interestFloor);
 
 			}
 			else {
 				break;
 			}
 
+		}
+		
+
+		try {
+			th1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
