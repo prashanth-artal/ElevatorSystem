@@ -1,24 +1,14 @@
 package org.assignment.elevatorsystem;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.Date;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Logger;
 
-import org.assignment.elevatorsystem.service.Main;
 
 public class ElevatorImplementation implements Elevator,Runnable{
 
@@ -28,11 +18,9 @@ public class ElevatorImplementation implements Elevator,Runnable{
 	private final int maxCapacity;
 	private int currentFloor;
 	
-	BlockingDeque<Integer> destinationQueue;
-	Writer output;
-
-
-	State state;
+	private BlockingDeque<Integer> destinationQueue;
+	private Writer output;
+	private State state;
 
 	public ElevatorImplementation(int elevatorId,int minFloor, int maxFloor, int maxCapacity) {
 		this.elevatorId =elevatorId;
@@ -52,6 +40,10 @@ public class ElevatorImplementation implements Elevator,Runnable{
 
 	public int getMinFloor() {
 		return minFloor;
+	}
+	
+	public int getMaxCapacity() {
+		return maxCapacity;
 	}
 
 
@@ -132,16 +124,19 @@ public class ElevatorImplementation implements Elevator,Runnable{
 
 		state = State.UP;
 		while(currentFloor<destination) {
+			
 			if(QContains(currentFloor)) {
 				writeToFile("\n\nReached Floor:"+currentFloor);
 				writeToFile("\n\t\t\tOPENING DOOR!!!!");
 				writeToFile("\n\t\t\tCLOSING DOOR!!!!");
 				destinationQueue.remove(currentFloor);
 			}
+			
 			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Crossing "+currentFloor);
 			currentFloor++;
 			wait3seconds();
 		}
+		
 		writeToFile("\n\nReached Floor:"+destination);
 		writeToFile("\n\t\t\tOPENING DOOR!!!!");
 		writeToFile("\n\t\t\tCLOSING DOOR!!!!");
@@ -182,15 +177,18 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		System.out.println(state);
 
 		while(currentFloor>destination) {
+			
 			if(QContains(currentFloor)) {
 				writeToFile("\n\nReached Floor:"+currentFloor);
 				writeToFile("\n\t\t\tOPENING DOOR!!!!");
 				writeToFile("\n\t\t\tCLOSING DOOR!!!!");
 				destinationQueue.remove(currentFloor);
 			}
+			
 			writeToFile(new Date()+"Elevator No: "+elevatorId+"  Crossing "+currentFloor);
 			currentFloor--;
 			wait3seconds();
+			
 		}
 
 		writeToFile("\n\nReached floor:"+destination);
@@ -207,11 +205,12 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			return false;
 		}
 		
-		int destination = destinationQueue.peek();
-		boolean downTest = (floor <= currentFloor && floor >= destination);
-		boolean upTest = (floor >= currentFloor && floor <= destination);
-		System.out.println(currentFloor+" "+floor+" "+destination+" "+downTest+" "+upTest);
+		int destination = destinationQueue.peek();		
+		boolean downTest = (floor <= currentFloor && floor >= destination);		
+		boolean upTest = (floor >= currentFloor && floor <= destination);		
+		System.out.println(currentFloor+" "+floor+" "+destination+" "+downTest+" "+upTest);		
 		return (floor >= currentFloor && floor <= destination) || (floor <= currentFloor && floor >= destination);
+		
 	}
 
 
@@ -237,6 +236,10 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			}
 			moveNext();
 		}
+	}
+	
+	public void setCurrentFloor(int floor) {
+		this.currentFloor = floor;
 	}
 
 

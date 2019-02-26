@@ -13,22 +13,27 @@ public class GlobalElevatorController implements ElevatorController{
 		this.elevators   =   elevators;
 	}
 
-	/**
-	 * Represents pick up (floor) : Signal to move to the particular floor
-	 * 
-	 * @param floor assumption: the same pickup floor will not be requested while it's being processed.  Logic should
-	 *             be handled by hypothetical button class.
-	 */
-
-	public void addPickup(String direction,int floor) {
 	
+	public void addPickup(String direction,int floor) {
+
 		boolean chkElevatorAssigned = false;
 
 		for (Elevator elevator : elevators) {
-			
+
 			if(elevator.getState() == State.UP && direction.equals("moveUp") ) {
-				
-				if(!elevator.isIdle() && elevator.isInPath(floor)) {
+				if(floor<elevator.getCurrentFloor()) {
+					boolean currDirection = true;
+					while(!elevator.isIdle()) {
+						if(currDirection) {
+							System.out.println("Wait!! Elevator is moving "+elevator.getState()+" and you chose "+floor);
+							currDirection = false;
+						}
+					}
+					elevator.queueDestination(floor);
+					chkElevatorAssigned = true;
+				}
+
+				else if(!elevator.isIdle() && elevator.isInPath(floor)) {
 					elevator.prependDestination(floor);
 					chkElevatorAssigned = true;
 
@@ -43,7 +48,18 @@ public class GlobalElevatorController implements ElevatorController{
 
 			if(elevator.getState() == State.DOWN &&  direction.equals("moveDown")  ) {
 
-				if(!elevator.isIdle() && elevator.isInPath(floor)) {
+				if(floor > elevator.getCurrentFloor()) {
+					boolean currDirection = true;
+					while(!elevator.isIdle()) {
+						if(currDirection) {
+							System.out.println("Wait!! Elevator is moving "+elevator.getState()+" and you chose "+floor);
+							currDirection = false;
+						}
+					}
+					elevator.queueDestination(floor);
+					chkElevatorAssigned = true;
+				}
+				else if(!elevator.isIdle() && elevator.isInPath(floor)) {
 					elevator.prependDestination(floor);
 					chkElevatorAssigned = true;
 
@@ -55,7 +71,7 @@ public class GlobalElevatorController implements ElevatorController{
 
 
 			}
-			System.out.println(elevator.getDestinationQueue());
+//			System.out.println(elevator.getDestinationQueue());
 
 		}
 
@@ -63,8 +79,16 @@ public class GlobalElevatorController implements ElevatorController{
 		for (Elevator elevator : elevators) {
 
 			if(!chkElevatorAssigned) {
+				boolean currDirection = true;
+				while(!elevator.isIdle()) {
+					if(currDirection) {
+						System.out.println("Wait!! Elevator is moving "+elevator.getState()+" and you chose to move "+direction);
+						currDirection = false;
+					}
+					continue;
+				}
 				elevator.queueDestination(floor);
-				System.out.println(elevator.getDestinationQueue());
+//				System.out.println(elevator.getDestinationQueue());
 				break;
 			}
 
@@ -81,12 +105,18 @@ public class GlobalElevatorController implements ElevatorController{
 			System.out.println(" ENTER VALID FLOOR NUMBER BETWN "+ StaticValues.ELEVATOR_START_FLOOR+"  -  "+StaticValues.ELEVATOR_END_FLOOR);
 			Scanner sc = new Scanner(System.in);
 			int value = sc.nextInt();
-			sc.close();
+			//			sc.close();
 			return verifyFloor(value);
 		}
 
-
 		return floor;
+	}
+	
+	
+	public List<Elevator> getElevators(){
+		
+		return elevators;
+		
 	}
 
 }

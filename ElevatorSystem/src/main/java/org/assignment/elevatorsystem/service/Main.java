@@ -3,7 +3,6 @@ package org.assignment.elevatorsystem.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 import org.assignment.elevatorsystem.Elevator;
 import org.assignment.elevatorsystem.ElevatorController;
@@ -26,22 +25,32 @@ import org.assignment.elevatorsystem.util.StaticValues;
    TEST CASES:
 
    TESTCASE 1.    
-               MoveUp  i)  2 ---------5
-               MoveUp  ii)              6---------15
+                   MoveUp  i)  2 ---------> 5
+                  MoveUp  ii)                 6 -------> 15
 
 
    TESTCASE 2.  
-                MoveUp  i) 2 ------------------13
-                MoveUp  ii)                7---------16
+                   MoveUp  i)  2 --------------------> 13
+                  MoveUp  ii)                7 -----------> 16
 
    TESTCASE 3.   
-                MoveUp  i)      2 ---------------------------------- 25
-                MoveUp  ii)                 9-------------------20
+                   MoveUp  i)  2 ------------------------------------------------> 25
+                   MoveUp  ii)                 9 ----------------------> 20
 
    TESTCASE 4.  
-                 MoveUp i) 2 --------------------------------------20
-                 MoveUp ii)                7---------16     
-                 MoveDown iii)          4<------ 10
+                 MoveUp     i) 2 --------------------------------------> 20
+                 MoveUp    ii)                7 ----------> 16     
+                 MoveDown iii)          4 <------ 10
+                 
+   TESTCASE 5. 
+                 MoveUp     i) 2 --------------------------------------> 20
+			     MoveUp    ii)               7 -----------------> 16
+                 MoveDown iii)            6 <---------- 10
+                 MoveDown  iv) 2 <-------------------------- 13
+                 MoveUp     v)                                                              30 ------> 35
+                 MoveUp    vi)                                    16 ----------------> 25 
+                 MoveUp    vi)                          10 --------------> 20
+                 MoveUp   vii)                   7------------> 15
 
  */
 
