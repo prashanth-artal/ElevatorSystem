@@ -23,12 +23,13 @@ public class ElevatorImplementation implements Elevator,Runnable{
 	private State state;
 
 	public ElevatorImplementation(int elevatorId,int minFloor, int maxFloor, int maxCapacity) {
+		
 		this.elevatorId =elevatorId;
 		this.minFloor = minFloor;
 		this.maxFloor = maxFloor;
 		this.maxCapacity = maxCapacity;
 		currentFloor = 0;
-		destinationQueue	= new LinkedBlockingDeque<>(20);
+		destinationQueue	= new LinkedBlockingDeque<>(300);
 
 	}
 
@@ -61,42 +62,51 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		return destinationQueue;
 	}
 
-
+   /* Function to insert floor to Deque*/
 	public void queueDestination(int floor) {
 		//O(N)
-		if (!destinationQueue.contains(floor)) {
+		/* Insert floor only if not present in Deque*/
+		if (!QContains(floor)) {
 			destinationQueue.add(floor);
 		}
 	}
 
-
+   /* Function to insert floor number to head of Deque*/
 	public void prependDestination(int floor) {
 		destinationQueue.addFirst(floor);
 	}
-
+     
+	
 	public void moveNext() {
 		if (destinationQueue.isEmpty()) {
 			return;
 		}
 		
 		int destination = destinationQueue.peek();
+		/* If current floor of elevator is less than destination then
+		 * Elevator must move up */		
 		if (currentFloor < destination) {
 			moveUp(destination);
-		} else if (currentFloor > destination) {
+		} 	/* If current floor of elevator is greater than destination then
+		 * Elevator must move down */		
+		else if (currentFloor > destination) {
 			moveDown(destination);
 		}
 
-			destinationQueue.poll();
+	    /* Remove Element from queue after reach*/
+		destinationQueue.poll();
 
 	}
 
 
 	public void wait3seconds() {
+		
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	public void wait2seconds() {
@@ -107,9 +117,10 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			e.printStackTrace();
 		}		
 	}
-
-	public boolean QContains(int current) {
-		if(destinationQueue.contains(current)) {
+    
+	/* Check whether floor present in already present in Queue */
+	public boolean QContains(int floor) {
+		if(destinationQueue.contains(floor)) {
 			return true;
 		}
 		else {
@@ -117,13 +128,11 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		}
 	}
 	
-	public void stop() {
-		
-	}
-	public void moveUp(int destination) {
+	/* Function to move up to the floor*/
+	public void moveUp(int floor) {
 
 		state = State.UP;
-		while(currentFloor<destination) {
+		while(currentFloor<floor) {
 			
 			if(QContains(currentFloor)) {
 				writeToFile("\n\nReached Floor:"+currentFloor);
@@ -137,13 +146,13 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			wait3seconds();
 		}
 		
-		writeToFile("\n\nReached Floor:"+destination);
+		writeToFile("\n\nReached Floor:"+floor);
 		writeToFile("\n\t\t\tOPENING DOOR!!!!");
 		writeToFile("\n\t\t\tCLOSING DOOR!!!!");
 
 	}
 
-	public synchronized void writeToFile(String msg)  {
+	public void writeToFile(String msg)  {
 		String fileName = "..\\ElevatorSystem\\Output\\"+elevatorId+".txt";
 		PrintWriter printWriter = null;
 		File file = new File(fileName);
@@ -170,13 +179,13 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		this.state = state;
 	}
 
-
-	public void moveDown(int destination) {
+    /* Function to move down to the floor */
+	public void moveDown(int floor) {
 
 		state = State.DOWN;
 		System.out.println(state);
 
-		while(currentFloor>destination) {
+		while(currentFloor>floor) {
 			
 			if(QContains(currentFloor)) {
 				writeToFile("\n\nReached Floor:"+currentFloor);
@@ -191,14 +200,14 @@ public class ElevatorImplementation implements Elevator,Runnable{
 			
 		}
 
-		writeToFile("\n\nReached floor:"+destination);
+		writeToFile("\n\nReached floor:"+floor);
 		writeToFile("\n\t\t\tOPENING DOOR!!!!");
 		writeToFile("\n\t\t\tCLOSING DOOR!!!!");
 
 
 	}
 
-
+     /*  Function to check if the  request floor is in between current floor and destination */
 	public boolean isInPath(int floor) {
 		
 		if (destinationQueue.isEmpty()) {
@@ -219,7 +228,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		return false;
 	}
 
-
+    /* Check if the Elevator is Idle*/
 	public boolean isIdle() {
 		if(destinationQueue.isEmpty()) {
 			state = State.IDLE;

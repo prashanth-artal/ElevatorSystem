@@ -102,14 +102,14 @@ public class TestGlobalElevatorController {
 		/* floor number is 0*/
 		int floorNumber = 0;
 		/* verify 0 is in the specified range */
-		int verifiedFloorNumber = impl.verifyFloor(floorNumber);		
+		int verifiedFloorNumber = impl.verifyFloorRange(floorNumber);		
 	
 		assertEquals("Failed poll", verifiedFloorNumber,0);
 		
 		/* floor number is 70*/
 		floorNumber = 70;
 		/* verify 70 is in the specified range */
-		verifiedFloorNumber = impl.verifyFloor(floorNumber);
+		verifiedFloorNumber = impl.verifyFloorRange(floorNumber);
 		assertEquals("Failed poll", verifiedFloorNumber,3);
 		
 	}

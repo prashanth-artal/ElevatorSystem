@@ -7,8 +7,11 @@ import java.util.Scanner;
 import org.assignment.elevatorsystem.Elevator;
 import org.assignment.elevatorsystem.ElevatorController;
 import org.assignment.elevatorsystem.ElevatorImplementation;
+import org.assignment.elevatorsystem.ElevatorOperation;
+import org.assignment.elevatorsystem.ElevatorOperationImpl;
 import org.assignment.elevatorsystem.GlobalElevatorController;
 import org.assignment.elevatorsystem.util.StaticValues;
+import org.assignment.elevatorsystem.util.Verify;
 
 
 /*
@@ -41,7 +44,7 @@ import org.assignment.elevatorsystem.util.StaticValues;
                  MoveUp     i) 2 --------------------------------------> 20
                  MoveUp    ii)                7 ----------> 16     
                  MoveDown iii)          4 <------ 10
-                 
+
    TESTCASE 5. 
                  MoveUp     i) 2 --------------------------------------> 20
 			     MoveUp    ii)               7 -----------------> 16
@@ -58,73 +61,47 @@ import org.assignment.elevatorsystem.util.StaticValues;
 public class Main {
 
 
+
 	public static void main(String[] args) {
 
+		/* Create Elevator Object with unique id */
+		ElevatorImplementation elevator_1 = new ElevatorImplementation( 1 ,StaticValues .ELEVATOR_END_FLOOR, StaticValues .ELEVATOR_START_FLOOR, StaticValues .ELEVATOR_CAPACITY);
 
-		int maxEndFloor = StaticValues.ELEVATOR_END_FLOOR;
-		int startFloor  = StaticValues.ELEVATOR_START_FLOOR;
-
-		ElevatorImplementation elevator_1 = new ElevatorImplementation(1,startFloor, maxEndFloor, 3);
-
+		/* Create List of Elevator Object*/
 		List<Elevator> elevatorList = new ArrayList<Elevator>();
+
+		/* add all Elevator objects to Elevator List*/
 		elevatorList.add(elevator_1);
 
+		/* Create Elevator Controller Object*/
 		ElevatorController controller_1= new GlobalElevatorController(elevatorList);
 
+		/* Start the Elevator Thread to run independetly*/
 		Thread th1 = new Thread(elevator_1);
 		th1.start();
 
-
+        
+        ElevatorOperation operation = new ElevatorOperationImpl();
+        
 		while(true) {
 
-			System.out.println(" Press \n 1. moveUp \n 2. moveDown \n 3. To exit");
+			/* Choose options to either move up or move down*/
+			System.out.println( StaticValues .OPTIONS );
 			Scanner sc  = new Scanner(System.in);
-			int val     = sc.nextInt();
 
-			if(val == 1) {
+			/* Verify the direction is valid Integer*/
+			int direction = Verify .verifyDirectionIsInteger(sc);
 
-				System.out.println("Enter your current floor :");
-
-				int currentFloor = sc.nextInt();
-				currentFloor     = controller_1.verifyFloor(currentFloor);
-				controller_1.addPickup("moveUp", currentFloor);
-
-
-				System.out.println("Enter your interest floor :");
-				int interestFloor = sc.nextInt();
-
-				while(interestFloor   <  currentFloor) {
-
-					System.out.println("You chose to move up:\n");
-					System.out.println("Re-enter your interest floor :");
-					interestFloor = sc.nextInt();
-					interestFloor = controller_1.verifyFloor(interestFloor);
-
-				} 
-
-				controller_1.addPickup("moveUp", interestFloor);
-
+			/* If direction 1 then Elevator ready to move up*/
+			if(direction == 1) {
+				
+				operation.moveUp(sc, controller_1);
+				
 			}
-			else if(val == 2) {
+			/* If direction 2 then Elevator ready to move down*/
+			else if(direction == 2) {
 
-				System.out.println("Enter your current floor :");
-				int currentFloor = sc.nextInt();
-				currentFloor     = controller_1 .verifyFloor(currentFloor);
-				controller_1.addPickup("moveDown", currentFloor);
-
-				System.out.println("Enter your interest floor :");
-				int interestFloor = sc.nextInt();
-				interestFloor     = controller_1.verifyFloor(interestFloor);
-
-				while(interestFloor   >  currentFloor) {
-
-					System.out.println("You chose to move up:\n");
-					System.out.println("Re-enter your interest floor :");
-					interestFloor = sc.nextInt();
-					interestFloor = controller_1.verifyFloor(interestFloor);
-
-				}
-				controller_1.addPickup("moveDown", interestFloor);
+				operation.moveDown(sc, controller_1);
 
 			}
 			else {

@@ -1,13 +1,5 @@
-                MoveUp     i) 2 --------------------------------------> 20
-			     MoveUp    ii)               7 -----------------> 16
-                 MoveDown iii)            6 <---------- 10
-                 MoveDown  iv) 2 <-------------------------- 13
-                 MoveUp     v)                                                              30 ------> 35
-                 MoveUp    vi)                                    16 ----------------> 25 
-                 MoveUp    vi)                          10 --------------> 20
-                 MoveUp   vii)                   7------------> 15
-Mon Feb 25 20:27:36 EST 2019Elevator No: 1  Crossing 0
-Mon Feb 25 20:27:39 EST 2019Elevator No: 1  Crossing 1
+Tue Feb 26 20:03:35 EST 2019Elevator No: 1  Crossing 0
+Tue Feb 26 20:03:38 EST 2019Elevator No: 1  Crossing 1
 
 
 Reached Floor:2
@@ -15,11 +7,11 @@ Reached Floor:2
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:27:42 EST 2019Elevator No: 1  Crossing 2
-Mon Feb 25 20:27:45 EST 2019Elevator No: 1  Crossing 3
-Mon Feb 25 20:27:48 EST 2019Elevator No: 1  Crossing 4
-Mon Feb 25 20:27:51 EST 2019Elevator No: 1  Crossing 5
-Mon Feb 25 20:27:54 EST 2019Elevator No: 1  Crossing 6
+Tue Feb 26 20:03:41 EST 2019Elevator No: 1  Crossing 2
+Tue Feb 26 20:03:44 EST 2019Elevator No: 1  Crossing 3
+Tue Feb 26 20:03:47 EST 2019Elevator No: 1  Crossing 4
+Tue Feb 26 20:03:50 EST 2019Elevator No: 1  Crossing 5
+Tue Feb 26 20:03:53 EST 2019Elevator No: 1  Crossing 6
 
 
 Reached Floor:7
@@ -27,15 +19,15 @@ Reached Floor:7
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:27:57 EST 2019Elevator No: 1  Crossing 7
-Mon Feb 25 20:28:00 EST 2019Elevator No: 1  Crossing 8
-Mon Feb 25 20:28:03 EST 2019Elevator No: 1  Crossing 9
-Mon Feb 25 20:28:06 EST 2019Elevator No: 1  Crossing 10
-Mon Feb 25 20:28:09 EST 2019Elevator No: 1  Crossing 11
-Mon Feb 25 20:28:12 EST 2019Elevator No: 1  Crossing 12
-Mon Feb 25 20:28:15 EST 2019Elevator No: 1  Crossing 13
-Mon Feb 25 20:28:18 EST 2019Elevator No: 1  Crossing 14
-Mon Feb 25 20:28:21 EST 2019Elevator No: 1  Crossing 15
+Tue Feb 26 20:03:56 EST 2019Elevator No: 1  Crossing 7
+Tue Feb 26 20:03:59 EST 2019Elevator No: 1  Crossing 8
+Tue Feb 26 20:04:02 EST 2019Elevator No: 1  Crossing 9
+Tue Feb 26 20:04:05 EST 2019Elevator No: 1  Crossing 10
+Tue Feb 26 20:04:08 EST 2019Elevator No: 1  Crossing 11
+Tue Feb 26 20:04:11 EST 2019Elevator No: 1  Crossing 12
+Tue Feb 26 20:04:14 EST 2019Elevator No: 1  Crossing 13
+Tue Feb 26 20:04:17 EST 2019Elevator No: 1  Crossing 14
+Tue Feb 26 20:04:20 EST 2019Elevator No: 1  Crossing 15
 
 
 Reached Floor:16
@@ -43,10 +35,10 @@ Reached Floor:16
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:28:24 EST 2019Elevator No: 1  Crossing 16
-Mon Feb 25 20:28:27 EST 2019Elevator No: 1  Crossing 17
-Mon Feb 25 20:28:30 EST 2019Elevator No: 1  Crossing 18
-Mon Feb 25 20:28:33 EST 2019Elevator No: 1  Crossing 19
+Tue Feb 26 20:04:23 EST 2019Elevator No: 1  Crossing 16
+Tue Feb 26 20:04:26 EST 2019Elevator No: 1  Crossing 17
+Tue Feb 26 20:04:29 EST 2019Elevator No: 1  Crossing 18
+Tue Feb 26 20:04:32 EST 2019Elevator No: 1  Crossing 19
 
 
 Reached Floor:20
@@ -54,13 +46,13 @@ Reached Floor:20
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:28:36 EST 2019Elevator No: 1  Crossing 20
-Mon Feb 25 20:28:39 EST 2019Elevator No: 1  Crossing 19
-Mon Feb 25 20:28:42 EST 2019Elevator No: 1  Crossing 18
-Mon Feb 25 20:28:45 EST 2019Elevator No: 1  Crossing 17
-Mon Feb 25 20:28:48 EST 2019Elevator No: 1  Crossing 16
-Mon Feb 25 20:28:51 EST 2019Elevator No: 1  Crossing 15
-Mon Feb 25 20:28:54 EST 2019Elevator No: 1  Crossing 14
+Tue Feb 26 20:04:35 EST 2019Elevator No: 1  Crossing 20
+Tue Feb 26 20:04:38 EST 2019Elevator No: 1  Crossing 19
+Tue Feb 26 20:04:41 EST 2019Elevator No: 1  Crossing 18
+Tue Feb 26 20:04:44 EST 2019Elevator No: 1  Crossing 17
+Tue Feb 26 20:04:47 EST 2019Elevator No: 1  Crossing 16
+Tue Feb 26 20:04:50 EST 2019Elevator No: 1  Crossing 15
+Tue Feb 26 20:04:53 EST 2019Elevator No: 1  Crossing 14
 
 
 Reached Floor:13
@@ -68,9 +60,9 @@ Reached Floor:13
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:28:57 EST 2019Elevator No: 1  Crossing 13
-Mon Feb 25 20:29:00 EST 2019Elevator No: 1  Crossing 12
-Mon Feb 25 20:29:03 EST 2019Elevator No: 1  Crossing 11
+Tue Feb 26 20:04:56 EST 2019Elevator No: 1  Crossing 13
+Tue Feb 26 20:04:59 EST 2019Elevator No: 1  Crossing 12
+Tue Feb 26 20:05:02 EST 2019Elevator No: 1  Crossing 11
 
 
 Reached floor:10
@@ -78,10 +70,10 @@ Reached floor:10
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:29:06 EST 2019Elevator No: 1  Crossing 10
-Mon Feb 25 20:29:09 EST 2019Elevator No: 1  Crossing 9
-Mon Feb 25 20:29:12 EST 2019Elevator No: 1  Crossing 8
-Mon Feb 25 20:29:15 EST 2019Elevator No: 1  Crossing 7
+Tue Feb 26 20:05:05 EST 2019Elevator No: 1  Crossing 10
+Tue Feb 26 20:05:08 EST 2019Elevator No: 1  Crossing 9
+Tue Feb 26 20:05:11 EST 2019Elevator No: 1  Crossing 8
+Tue Feb 26 20:05:14 EST 2019Elevator No: 1  Crossing 7
 
 
 Reached floor:6
@@ -89,10 +81,10 @@ Reached floor:6
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:29:18 EST 2019Elevator No: 1  Crossing 6
-Mon Feb 25 20:29:21 EST 2019Elevator No: 1  Crossing 5
-Mon Feb 25 20:29:24 EST 2019Elevator No: 1  Crossing 4
-Mon Feb 25 20:29:27 EST 2019Elevator No: 1  Crossing 3
+Tue Feb 26 20:05:17 EST 2019Elevator No: 1  Crossing 6
+Tue Feb 26 20:05:20 EST 2019Elevator No: 1  Crossing 5
+Tue Feb 26 20:05:23 EST 2019Elevator No: 1  Crossing 4
+Tue Feb 26 20:05:26 EST 2019Elevator No: 1  Crossing 3
 
 
 Reached floor:2
@@ -100,14 +92,14 @@ Reached floor:2
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:29:30 EST 2019Elevator No: 1  Crossing 2
-Mon Feb 25 20:29:33 EST 2019Elevator No: 1  Crossing 3
-Mon Feb 25 20:29:36 EST 2019Elevator No: 1  Crossing 4
-Mon Feb 25 20:29:39 EST 2019Elevator No: 1  Crossing 5
-Mon Feb 25 20:29:42 EST 2019Elevator No: 1  Crossing 6
-Mon Feb 25 20:29:45 EST 2019Elevator No: 1  Crossing 7
-Mon Feb 25 20:29:48 EST 2019Elevator No: 1  Crossing 8
-Mon Feb 25 20:29:51 EST 2019Elevator No: 1  Crossing 9
+Tue Feb 26 20:05:29 EST 2019Elevator No: 1  Crossing 2
+Tue Feb 26 20:05:32 EST 2019Elevator No: 1  Crossing 3
+Tue Feb 26 20:05:35 EST 2019Elevator No: 1  Crossing 4
+Tue Feb 26 20:05:38 EST 2019Elevator No: 1  Crossing 5
+Tue Feb 26 20:05:41 EST 2019Elevator No: 1  Crossing 6
+Tue Feb 26 20:05:44 EST 2019Elevator No: 1  Crossing 7
+Tue Feb 26 20:05:47 EST 2019Elevator No: 1  Crossing 8
+Tue Feb 26 20:05:50 EST 2019Elevator No: 1  Crossing 9
 
 
 Reached Floor:10
@@ -115,12 +107,12 @@ Reached Floor:10
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:29:54 EST 2019Elevator No: 1  Crossing 10
-Mon Feb 25 20:29:57 EST 2019Elevator No: 1  Crossing 11
-Mon Feb 25 20:30:00 EST 2019Elevator No: 1  Crossing 12
-Mon Feb 25 20:30:03 EST 2019Elevator No: 1  Crossing 13
-Mon Feb 25 20:30:06 EST 2019Elevator No: 1  Crossing 14
-Mon Feb 25 20:30:09 EST 2019Elevator No: 1  Crossing 15
+Tue Feb 26 20:05:53 EST 2019Elevator No: 1  Crossing 10
+Tue Feb 26 20:05:56 EST 2019Elevator No: 1  Crossing 11
+Tue Feb 26 20:05:59 EST 2019Elevator No: 1  Crossing 12
+Tue Feb 26 20:06:02 EST 2019Elevator No: 1  Crossing 13
+Tue Feb 26 20:06:05 EST 2019Elevator No: 1  Crossing 14
+Tue Feb 26 20:06:08 EST 2019Elevator No: 1  Crossing 15
 
 
 Reached Floor:16
@@ -128,10 +120,10 @@ Reached Floor:16
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:30:12 EST 2019Elevator No: 1  Crossing 16
-Mon Feb 25 20:30:15 EST 2019Elevator No: 1  Crossing 17
-Mon Feb 25 20:30:18 EST 2019Elevator No: 1  Crossing 18
-Mon Feb 25 20:30:21 EST 2019Elevator No: 1  Crossing 19
+Tue Feb 26 20:06:11 EST 2019Elevator No: 1  Crossing 16
+Tue Feb 26 20:06:14 EST 2019Elevator No: 1  Crossing 17
+Tue Feb 26 20:06:17 EST 2019Elevator No: 1  Crossing 18
+Tue Feb 26 20:06:20 EST 2019Elevator No: 1  Crossing 19
 
 
 Reached Floor:20
@@ -139,11 +131,11 @@ Reached Floor:20
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:30:24 EST 2019Elevator No: 1  Crossing 20
-Mon Feb 25 20:30:27 EST 2019Elevator No: 1  Crossing 21
-Mon Feb 25 20:30:30 EST 2019Elevator No: 1  Crossing 22
-Mon Feb 25 20:30:33 EST 2019Elevator No: 1  Crossing 23
-Mon Feb 25 20:30:36 EST 2019Elevator No: 1  Crossing 24
+Tue Feb 26 20:06:23 EST 2019Elevator No: 1  Crossing 20
+Tue Feb 26 20:06:26 EST 2019Elevator No: 1  Crossing 21
+Tue Feb 26 20:06:29 EST 2019Elevator No: 1  Crossing 22
+Tue Feb 26 20:06:32 EST 2019Elevator No: 1  Crossing 23
+Tue Feb 26 20:06:35 EST 2019Elevator No: 1  Crossing 24
 
 
 Reached Floor:25
@@ -151,11 +143,11 @@ Reached Floor:25
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:30:39 EST 2019Elevator No: 1  Crossing 25
-Mon Feb 25 20:30:42 EST 2019Elevator No: 1  Crossing 26
-Mon Feb 25 20:30:45 EST 2019Elevator No: 1  Crossing 27
-Mon Feb 25 20:30:48 EST 2019Elevator No: 1  Crossing 28
-Mon Feb 25 20:30:51 EST 2019Elevator No: 1  Crossing 29
+Tue Feb 26 20:06:38 EST 2019Elevator No: 1  Crossing 25
+Tue Feb 26 20:06:41 EST 2019Elevator No: 1  Crossing 26
+Tue Feb 26 20:06:44 EST 2019Elevator No: 1  Crossing 27
+Tue Feb 26 20:06:47 EST 2019Elevator No: 1  Crossing 28
+Tue Feb 26 20:06:50 EST 2019Elevator No: 1  Crossing 29
 
 
 Reached Floor:30
@@ -163,11 +155,11 @@ Reached Floor:30
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:30:54 EST 2019Elevator No: 1  Crossing 30
-Mon Feb 25 20:30:57 EST 2019Elevator No: 1  Crossing 31
-Mon Feb 25 20:31:00 EST 2019Elevator No: 1  Crossing 32
-Mon Feb 25 20:31:03 EST 2019Elevator No: 1  Crossing 33
-Mon Feb 25 20:31:06 EST 2019Elevator No: 1  Crossing 34
+Tue Feb 26 20:06:53 EST 2019Elevator No: 1  Crossing 30
+Tue Feb 26 20:06:56 EST 2019Elevator No: 1  Crossing 31
+Tue Feb 26 20:06:59 EST 2019Elevator No: 1  Crossing 32
+Tue Feb 26 20:07:02 EST 2019Elevator No: 1  Crossing 33
+Tue Feb 26 20:07:05 EST 2019Elevator No: 1  Crossing 34
 
 
 Reached Floor:35
@@ -175,34 +167,34 @@ Reached Floor:35
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:31:09 EST 2019Elevator No: 1  Crossing 35
-Mon Feb 25 20:31:12 EST 2019Elevator No: 1  Crossing 34
-Mon Feb 25 20:31:15 EST 2019Elevator No: 1  Crossing 33
-Mon Feb 25 20:31:18 EST 2019Elevator No: 1  Crossing 32
-Mon Feb 25 20:31:21 EST 2019Elevator No: 1  Crossing 31
-Mon Feb 25 20:31:24 EST 2019Elevator No: 1  Crossing 30
-Mon Feb 25 20:31:27 EST 2019Elevator No: 1  Crossing 29
-Mon Feb 25 20:31:30 EST 2019Elevator No: 1  Crossing 28
-Mon Feb 25 20:31:33 EST 2019Elevator No: 1  Crossing 27
-Mon Feb 25 20:31:36 EST 2019Elevator No: 1  Crossing 26
-Mon Feb 25 20:31:39 EST 2019Elevator No: 1  Crossing 25
-Mon Feb 25 20:31:42 EST 2019Elevator No: 1  Crossing 24
-Mon Feb 25 20:31:45 EST 2019Elevator No: 1  Crossing 23
-Mon Feb 25 20:31:48 EST 2019Elevator No: 1  Crossing 22
-Mon Feb 25 20:31:51 EST 2019Elevator No: 1  Crossing 21
-Mon Feb 25 20:31:54 EST 2019Elevator No: 1  Crossing 20
-Mon Feb 25 20:31:57 EST 2019Elevator No: 1  Crossing 19
-Mon Feb 25 20:32:00 EST 2019Elevator No: 1  Crossing 18
-Mon Feb 25 20:32:03 EST 2019Elevator No: 1  Crossing 17
-Mon Feb 25 20:32:06 EST 2019Elevator No: 1  Crossing 16
-Mon Feb 25 20:32:09 EST 2019Elevator No: 1  Crossing 15
-Mon Feb 25 20:32:12 EST 2019Elevator No: 1  Crossing 14
-Mon Feb 25 20:32:15 EST 2019Elevator No: 1  Crossing 13
-Mon Feb 25 20:32:18 EST 2019Elevator No: 1  Crossing 12
-Mon Feb 25 20:32:21 EST 2019Elevator No: 1  Crossing 11
-Mon Feb 25 20:32:24 EST 2019Elevator No: 1  Crossing 10
-Mon Feb 25 20:32:27 EST 2019Elevator No: 1  Crossing 9
-Mon Feb 25 20:32:30 EST 2019Elevator No: 1  Crossing 8
+Tue Feb 26 20:07:08 EST 2019Elevator No: 1  Crossing 35
+Tue Feb 26 20:07:11 EST 2019Elevator No: 1  Crossing 34
+Tue Feb 26 20:07:14 EST 2019Elevator No: 1  Crossing 33
+Tue Feb 26 20:07:17 EST 2019Elevator No: 1  Crossing 32
+Tue Feb 26 20:07:20 EST 2019Elevator No: 1  Crossing 31
+Tue Feb 26 20:07:23 EST 2019Elevator No: 1  Crossing 30
+Tue Feb 26 20:07:26 EST 2019Elevator No: 1  Crossing 29
+Tue Feb 26 20:07:29 EST 2019Elevator No: 1  Crossing 28
+Tue Feb 26 20:07:32 EST 2019Elevator No: 1  Crossing 27
+Tue Feb 26 20:07:35 EST 2019Elevator No: 1  Crossing 26
+Tue Feb 26 20:07:38 EST 2019Elevator No: 1  Crossing 25
+Tue Feb 26 20:07:41 EST 2019Elevator No: 1  Crossing 24
+Tue Feb 26 20:07:44 EST 2019Elevator No: 1  Crossing 23
+Tue Feb 26 20:07:47 EST 2019Elevator No: 1  Crossing 22
+Tue Feb 26 20:07:50 EST 2019Elevator No: 1  Crossing 21
+Tue Feb 26 20:07:53 EST 2019Elevator No: 1  Crossing 20
+Tue Feb 26 20:07:56 EST 2019Elevator No: 1  Crossing 19
+Tue Feb 26 20:07:59 EST 2019Elevator No: 1  Crossing 18
+Tue Feb 26 20:08:02 EST 2019Elevator No: 1  Crossing 17
+Tue Feb 26 20:08:05 EST 2019Elevator No: 1  Crossing 16
+Tue Feb 26 20:08:08 EST 2019Elevator No: 1  Crossing 15
+Tue Feb 26 20:08:11 EST 2019Elevator No: 1  Crossing 14
+Tue Feb 26 20:08:14 EST 2019Elevator No: 1  Crossing 13
+Tue Feb 26 20:08:17 EST 2019Elevator No: 1  Crossing 12
+Tue Feb 26 20:08:20 EST 2019Elevator No: 1  Crossing 11
+Tue Feb 26 20:08:23 EST 2019Elevator No: 1  Crossing 10
+Tue Feb 26 20:08:26 EST 2019Elevator No: 1  Crossing 9
+Tue Feb 26 20:08:29 EST 2019Elevator No: 1  Crossing 8
 
 
 Reached floor:7
@@ -210,14 +202,14 @@ Reached floor:7
 			OPENING DOOR!!!!
 
 			CLOSING DOOR!!!!
-Mon Feb 25 20:32:33 EST 2019Elevator No: 1  Crossing 7
-Mon Feb 25 20:32:36 EST 2019Elevator No: 1  Crossing 8
-Mon Feb 25 20:32:39 EST 2019Elevator No: 1  Crossing 9
-Mon Feb 25 20:32:42 EST 2019Elevator No: 1  Crossing 10
-Mon Feb 25 20:32:45 EST 2019Elevator No: 1  Crossing 11
-Mon Feb 25 20:32:48 EST 2019Elevator No: 1  Crossing 12
-Mon Feb 25 20:32:51 EST 2019Elevator No: 1  Crossing 13
-Mon Feb 25 20:32:54 EST 2019Elevator No: 1  Crossing 14
+Tue Feb 26 20:08:32 EST 2019Elevator No: 1  Crossing 7
+Tue Feb 26 20:08:35 EST 2019Elevator No: 1  Crossing 8
+Tue Feb 26 20:08:38 EST 2019Elevator No: 1  Crossing 9
+Tue Feb 26 20:08:41 EST 2019Elevator No: 1  Crossing 10
+Tue Feb 26 20:08:44 EST 2019Elevator No: 1  Crossing 11
+Tue Feb 26 20:08:47 EST 2019Elevator No: 1  Crossing 12
+Tue Feb 26 20:08:50 EST 2019Elevator No: 1  Crossing 13
+Tue Feb 26 20:08:53 EST 2019Elevator No: 1  Crossing 14
 
 
 Reached Floor:15

@@ -19,5 +19,5 @@ public interface Elevator {
 	boolean isFull();
 	boolean isIdle(); 
 	public State getState();
-	void run();
+//	void run();
 }
