@@ -7,8 +7,10 @@ import org.assignment.elevatorsystem.util.Verify;
 
 public class ElevatorOperationImpl implements ElevatorOperation{
 
-	@Override
-	public void moveUp(Scanner sc, ElevatorController controller) {
+	 Scanner sc = new Scanner(System.in);
+
+	 @Override
+	public void moveUp(ElevatorController controller) {
 		// TODO Auto-generated method stub
 		
 		System.out.println( StaticValues .CURRENT_FLOOR );		
@@ -43,7 +45,7 @@ public class ElevatorOperationImpl implements ElevatorOperation{
 	}
 
 	@Override
-	public void moveDown(Scanner sc, ElevatorController controller) {
+	public void moveDown( ElevatorController controller) {
 		// TODO Auto-generated method stub
 		System.out.println( StaticValues .CURRENT_FLOOR );
 		/* Verify the floor number is valid Integer*/

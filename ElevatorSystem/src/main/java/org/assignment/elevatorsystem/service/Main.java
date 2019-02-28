@@ -94,13 +94,13 @@ public class Main {
 			/* If direction 1 then Elevator ready to move up*/
 			if(direction == 1) {
 				
-				operation.moveUp(sc, controller_1);
+				operation.moveUp(controller_1);
 				
 			}
 			/* If direction 2 then Elevator ready to move down*/
 			else if(direction == 2) {
 
-				operation.moveDown(sc, controller_1);
+				operation.moveDown(controller_1);
 
 			}
 			else {
