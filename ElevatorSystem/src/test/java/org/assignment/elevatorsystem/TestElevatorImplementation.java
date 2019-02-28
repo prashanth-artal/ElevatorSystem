@@ -10,11 +10,11 @@ import org.junit.Test;
 
 public class TestElevatorImplementation {
 	
-	private ElevatorImplementation impl;
+	private Elevator impl;
 	
 	@Before
 	public void setUp() {
-		impl = new ElevatorImplementation(1, StaticValues.ELEVATOR_START_FLOOR ,StaticValues.ELEVATOR_END_FLOOR, 10);
+		impl = new Elevator(1, StaticValues.ELEVATOR_START_FLOOR ,StaticValues.ELEVATOR_END_FLOOR, 10);
 	}
 	
     /* Test Elevator Object Creation*/	

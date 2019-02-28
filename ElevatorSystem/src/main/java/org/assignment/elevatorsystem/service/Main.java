@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 import org.assignment.elevatorsystem.Elevator;
 import org.assignment.elevatorsystem.ElevatorController;
-import org.assignment.elevatorsystem.ElevatorImplementation;
 import org.assignment.elevatorsystem.ElevatorOperation;
 import org.assignment.elevatorsystem.ElevatorOperationImpl;
 import org.assignment.elevatorsystem.GlobalElevatorController;
@@ -52,8 +51,8 @@ import org.assignment.elevatorsystem.util.Verify;
                  MoveDown  iv) 2 <-------------------------- 13
                  MoveUp     v)                                                              30 ------> 35
                  MoveUp    vi)                                    16 ----------------> 25 
-                 MoveUp    vi)                          10 --------------> 20
-                 MoveUp   vii)                   7------------> 15
+                 MoveUp   vii)                          10 --------------> 20
+                 MoveUp  viii)                   7------------> 15
 
  */
 
@@ -65,7 +64,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		/* Create Elevator Object with unique id */
-		ElevatorImplementation elevator_1 = new ElevatorImplementation( 1 ,StaticValues .ELEVATOR_END_FLOOR, StaticValues .ELEVATOR_START_FLOOR, StaticValues .ELEVATOR_CAPACITY);
+		Elevator elevator_1 = new Elevator( 1 ,StaticValues .ELEVATOR_END_FLOOR, StaticValues .ELEVATOR_START_FLOOR, StaticValues .ELEVATOR_CAPACITY);
 
 		/* Create List of Elevator Object*/
 		List<Elevator> elevatorList = new ArrayList<Elevator>();
