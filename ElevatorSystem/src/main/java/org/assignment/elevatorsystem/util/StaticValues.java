@@ -1,5 +1,6 @@
 package org.assignment.elevatorsystem.util;
 
+/* Constants for Single Elevator Implementation */
 public class StaticValues {
    
 	 public static final int  ELEVATOR_START_FLOOR   = 0;

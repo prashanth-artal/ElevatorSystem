@@ -35,7 +35,7 @@ public class GlobalElevatorController implements ElevatorController{
 
 			/* The below condition check whether the elevator already in motion moving up and 
 			 * the external request made is also for moving up */			
-			if(elevator.getState() == State.UP && direction.equals("moveUp") ) {
+			if(elevator.getState() == ElevatorState.UP && direction.equals("moveUp") ) {
 				
 				/* Check if the current elevator position higher than the external request
 				 * Ex : Elevator is moving up and its crossing 5 floor and external request made is from 0 to 4
@@ -89,7 +89,7 @@ public class GlobalElevatorController implements ElevatorController{
 
 			/* The below condition check whether the elevator already in motion moving down and 
 			 * the external request made is also for moving down */	
-			if(elevator.getState() == State.DOWN &&  direction.equals("moveDown")  ) {
+			if(elevator.getState() == ElevatorState.DOWN &&  direction.equals("moveDown")  ) {
 
 				/* Check if the current elevator position lower than the external request
 				 * Ex : Elevator is moving down and its crossing 5 floor and external request made is from  6 to 50

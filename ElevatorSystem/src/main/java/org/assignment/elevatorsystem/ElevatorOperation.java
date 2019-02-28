@@ -2,6 +2,7 @@ package org.assignment.elevatorsystem;
 
 import java.util.Scanner;
 
+/* Elevator Operation interface  */
 public interface ElevatorOperation {
 
 	

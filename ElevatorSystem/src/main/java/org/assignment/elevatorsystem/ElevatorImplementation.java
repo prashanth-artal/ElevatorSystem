@@ -20,7 +20,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 	
 	private BlockingDeque<Integer> destinationQueue;
 	private Writer output;
-	private State state;
+	private ElevatorState state;
 
 	public ElevatorImplementation(int elevatorId,int minFloor, int maxFloor, int maxCapacity) {
 		
@@ -131,7 +131,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
 	/* Function to move up to the floor*/
 	public void moveUp(int floor) {
 
-		state = State.UP;
+		state = ElevatorState.UP;
 		while(currentFloor<floor) {
 			
 			if(QContains(currentFloor)) {
@@ -170,19 +170,19 @@ public class ElevatorImplementation implements Elevator,Runnable{
 		}
 	}
 
-	public State getState() {
+	public ElevatorState getState() {
 		return state;
 	}
 
 
-	public void setState(State state) {
+	public void setState(ElevatorState state) {
 		this.state = state;
 	}
 
     /* Function to move down to the floor */
 	public void moveDown(int floor) {
 
-		state = State.DOWN;
+		state = ElevatorState.DOWN;
 		System.out.println(state);
 
 		while(currentFloor>floor) {
@@ -231,7 +231,7 @@ public class ElevatorImplementation implements Elevator,Runnable{
     /* Check if the Elevator is Idle*/
 	public boolean isIdle() {
 		if(destinationQueue.isEmpty()) {
-			state = State.IDLE;
+			state = ElevatorState.IDLE;
 		}
 		return destinationQueue.isEmpty();
 	}
